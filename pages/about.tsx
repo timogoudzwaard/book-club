@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Header from '../components/header/header';
 
 const About = () => {
   return (
@@ -8,8 +9,10 @@ const About = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>About page</h1>
+      <Header />
+
+      <main className="container mx-auto pt-4">
+        <h1 className="text-3xl">About page</h1>
         <p>This is the about page.</p>
       </main>
     </div>
