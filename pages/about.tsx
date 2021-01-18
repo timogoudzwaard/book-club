@@ -1,6 +1,6 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-export default function About() {
+const About = () => {
   return (
     <div>
       <Head>
@@ -14,4 +14,6 @@ export default function About() {
       </main>
     </div>
   );
-}
+};
+
+export default About;
