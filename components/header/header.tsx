@@ -1,7 +1,7 @@
 const Header = () => {
   return (
-    <header className="p-4 mb-4 bg-white container border-b-2 mx-auto flex justify-between">
-      <a href="/">
+    <header className="p-4 mb-4 bg-white container border-b-2 mx-auto flex flex-wrap justify-between">
+      <a className="w-full md:w-auto" href="/">
         <img
           className="h-10 w-10"
           src="/svg/icon-message.svg"

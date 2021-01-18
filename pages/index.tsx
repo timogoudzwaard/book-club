@@ -11,8 +11,8 @@ const Home = () => {
 
       <Header />
 
-      <main className="container mx-auto pt-4">
-        <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+      <main className="container mx-auto p-2">
+        <div className="p-6 ring-1 ring-black ring-opacity-5 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
           <div className="flex-shrink-0">
             <img
               className="h-12 w-12"

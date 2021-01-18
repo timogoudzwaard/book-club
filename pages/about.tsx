@@ -11,7 +11,7 @@ const About = () => {
 
       <Header />
 
-      <main className="container mx-auto pt-4">
+      <main className="container mx-auto p-2">
         <h1 className="text-3xl">About page</h1>
         <p>This is the about page.</p>
       </main>
