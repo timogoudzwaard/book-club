@@ -35,14 +35,14 @@ const SignIn = () => {
       >
         {({ isSubmitting }) => (
           <Form>
-            <TextField type="email" name="email" />
+            <TextField type="email" name="email" placeholder="e-mail" />
             <ErrorMessage
               name="email"
               component="div"
               className="text-red-500 mt-1"
             />
 
-            <TextField type="password" name="password" />
+            <TextField type="password" name="password" placeholder="password" />
             <ErrorMessage
               name="password"
               component="div"
