@@ -1,6 +1,12 @@
 import { Field } from 'formik';
 
-const TextField = ({ type, name, placeholder }) => {
+interface TextFieldProps {
+  type: string;
+  name: string;
+  placeholder: string;
+}
+
+const TextField = ({ type, name, placeholder }: TextFieldProps) => {
   return (
     <Field
       type={type}
