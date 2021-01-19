@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Header from '../components/header/header';
+import Header from '../../components/header/header';
 
 const About = () => {
   return (
@@ -12,8 +12,8 @@ const About = () => {
       <Header />
 
       <main className="container mx-auto p-2">
-        <h1 className="text-3xl">About page</h1>
-        <p>This is the about page.</p>
+        <h1 className="text-3xl text-center">About page</h1>
+        <p className="text-center">This is the about page.</p>
       </main>
     </div>
   );
