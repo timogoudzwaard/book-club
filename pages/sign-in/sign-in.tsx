@@ -1,8 +1,15 @@
 import Header from '../../components/header/header';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Form, Formik } from 'formik';
 import TextField from '../../components/form/text-field';
 
 const SignIn = () => {
+  const signIn = async (username: string, password: string) => {
+    const res = await fetch(
+      `http://127.0.0.1:5000/sign-in?username=${username}&password=${password}`
+    );
+    return res.json();
+  };
+
   const renderSignInForm = () => {
     return (
       <Formik
@@ -27,10 +34,11 @@ const SignIn = () => {
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+          signIn(values.email, values.password).then((apiResponse) => {
+            console.log(apiResponse);
+          });
+
+          setSubmitting(false);
         }}
       >
         {({ isSubmitting }) => (
