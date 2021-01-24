@@ -1,22 +1,27 @@
 import Header from '../../components/header/header';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Form, Formik } from 'formik';
+import { useRouter } from 'next/router';
 import TextField from '../../components/form/text-field';
 
 const SignIn = () => {
+  const router = useRouter();
+
+  const signIn = async (username: string, password: string) => {
+    return await fetch(
+      `/api/sign-in?username=${username}&password=${password}`
+    );
+  };
+
   const renderSignInForm = () => {
     return (
       <Formik
-        initialValues={{ email: '', password: '' }}
+        initialValues={{ username: '', password: '' }}
         validate={(values) => {
           let errors = {};
 
-          // email
-          if (!values.email) {
-            errors = { ...errors, email: 'This field is required' };
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors = { ...errors, email: 'Invalid email address' };
+          // username
+          if (!values.username) {
+            errors = { ...errors, username: 'This field is required' };
           }
 
           // password
@@ -27,22 +32,33 @@ const SignIn = () => {
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+          signIn(values.username, values.password).then(
+            (apiResponse: Response) => {
+              if (apiResponse.status === 200) {
+                router.push({
+                  pathname: '/profile',
+                  query: { username: values.username },
+                });
+              } else {
+                console.error('Credentials invalid');
+                // do something when credentials are invalid
+              }
+            }
+          );
+
+          setSubmitting(false);
         }}
       >
         {({ isSubmitting }) => (
           <Form>
-            <TextField type="email" name="email" />
+            <TextField type="text" name="username" placeholder="username" />
             <ErrorMessage
-              name="email"
+              name="username"
               component="div"
               className="text-red-500 mt-1"
             />
 
-            <TextField type="password" name="password" />
+            <TextField type="password" name="password" placeholder="password" />
             <ErrorMessage
               name="password"
               component="div"
