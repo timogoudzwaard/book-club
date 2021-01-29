@@ -1,4 +1,4 @@
-import Header from '../../components/organism/header/header';
+import Header from '../../components/organisms/header/header';
 import { useRouter } from 'next/router';
 
 const Profile = () => {

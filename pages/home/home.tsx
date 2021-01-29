@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Card from '../../components/atoms/card/card';
-import Header from '../../components/organism/header/header';
+import Header from '../../components/organisms/header/header';
 
 const Home = () => {
   return (
