@@ -1,22 +1,28 @@
 import Header from '../../components/header/header';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Form, Formik } from 'formik';
+import { useRouter } from 'next/router';
 import TextField from '../../components/form/text-field';
+import Button from '../../components/button/button';
 
 const SignIn = () => {
+  const router = useRouter();
+
+  const signIn = async (username: string, password: string) => {
+    return await fetch(
+      `/api/sign-in?username=${username}&password=${password}`
+    );
+  };
+
   const renderSignInForm = () => {
     return (
       <Formik
-        initialValues={{ email: '', password: '' }}
+        initialValues={{ username: '', password: '' }}
         validate={(values) => {
           let errors = {};
 
-          // email
-          if (!values.email) {
-            errors = { ...errors, email: 'This field is required' };
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors = { ...errors, email: 'Invalid email address' };
+          // username
+          if (!values.username) {
+            errors = { ...errors, username: 'This field is required' };
           }
 
           // password
@@ -27,35 +33,57 @@ const SignIn = () => {
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+          signIn(values.username, values.password).then(
+            (apiResponse: Response) => {
+              if (apiResponse.status === 200) {
+                router.push({
+                  pathname: '/profile',
+                  query: { username: values.username },
+                });
+              } else {
+                console.error('Credentials invalid');
+                // do something when credentials are invalid
+              }
+            }
+          );
+
+          setSubmitting(false);
         }}
       >
         {({ isSubmitting }) => (
           <Form>
-            <TextField type="email" name="email" />
+            <TextField
+              type="text"
+              name="username"
+              autocomplete="username"
+              placeholder="username"
+            />
             <ErrorMessage
-              name="email"
+              name="username"
               component="div"
               className="text-red-500 mt-1"
             />
 
-            <TextField type="password" name="password" />
+            <TextField
+              type="password"
+              name="password"
+              autocomplete="current-password"
+              placeholder="password"
+            />
             <ErrorMessage
               name="password"
               component="div"
               className="text-red-500 mt-1"
             />
 
-            <button
-              className="mt-4 shadow-md px-4 py-2 rounded-md ring-1 ring-black ring-opacity-5 font-medium text-white transition bg-indigo-600 hover:bg-indigo-700"
+            <Button
+              color="purple"
               type="submit"
+              defaultMargin
               disabled={isSubmitting}
             >
               Sign in
-            </button>
+            </Button>
           </Form>
         )}
       </Formik>
