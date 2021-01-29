@@ -5,7 +5,7 @@ const Header = () => {
     <header className="p-4 mb-4 bg-white container border-b-2 mx-auto flex flex-wrap justify-between">
       <a className="w-full md:w-auto" href="/">
         <img
-          className="mb-2 h-10 w-10 mx-auto md:m-0"
+          className="mb-2 h-10 w-10 mx-auto md:m-0 transition transform hover:scale-110"
           src="/svg/icon-message.svg"
           alt="chat icon"
         />
