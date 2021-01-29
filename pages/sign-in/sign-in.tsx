@@ -1,8 +1,8 @@
-import Header from '../../components/header/header';
+import Header from '../../components/organism/header/header';
 import { ErrorMessage, Form, Formik } from 'formik';
 import { useRouter } from 'next/router';
-import TextField from '../../components/form/text-field';
-import Button from '../../components/button/button';
+import TextField from '../../components/atoms/text-field/text-field';
+import Button from '../../components/atoms/button/button';
 
 const SignIn = () => {
   const router = useRouter();

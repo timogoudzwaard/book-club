@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Header from '../../components/header/header';
+import Header from '../../components/organism/header/header';
 
 const About = () => {
   return (
