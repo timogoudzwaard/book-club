@@ -56,7 +56,8 @@ const SignIn = () => {
               type="text"
               name="username"
               autocomplete="username"
-              placeholder="username"
+              label="username"
+              defaultMargin
             />
             <ErrorMessage
               name="username"
@@ -68,7 +69,8 @@ const SignIn = () => {
               type="password"
               name="password"
               autocomplete="current-password"
-              placeholder="password"
+              label="password"
+              defaultMargin
             />
             <ErrorMessage
               name="password"
