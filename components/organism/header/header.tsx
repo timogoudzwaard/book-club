@@ -1,4 +1,4 @@
-import Button from '../button/button';
+import Button from '../../atoms/button/button';
 
 const Header = () => {
   return (

@@ -1,11 +1,11 @@
 import Head from 'next/head';
-import Header from '../components/header/header';
+import Header from '../components/organism/header/header';
 
 const Home = () => {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Book Club!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
