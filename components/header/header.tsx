@@ -10,17 +10,18 @@ const Header = () => {
       </a>
 
       <div className="self-center space-x-10">
+         <a
+          href="/home"
+          className=" text-base font-medium text-gray-500 hover:text-gray-900"
+        >
+          Home
+        </a>
+        
         <a
           href="/about"
           className=" text-base font-medium text-gray-500 hover:text-gray-900"
         >
           About
-        </a>
-        <a
-          href="/about"
-          className=" text-base font-medium text-gray-500 hover:text-gray-900"
-        >
-          Pricing
         </a>
       </div>
 
