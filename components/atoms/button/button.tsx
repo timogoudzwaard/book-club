@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-type ButtonProps = {
+export type ButtonProps = {
   children: string;
   disabled?: boolean;
   type?: 'submit' | 'reset' | 'button';
