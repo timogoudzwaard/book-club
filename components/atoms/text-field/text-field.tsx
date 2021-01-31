@@ -36,7 +36,7 @@ const TextField = ({
         name={name}
         placeholder={placeholder}
         autoComplete={autocomplete}
-        className="block mt-1 px-4 py-2 w-full rounded-md ring-1 ring-black ring-opacity-5 transition shadow hover:shadow-md"
+        className="block mt-1 px-4 py-2 w-full appearance-none rounded-md ring-1 ring-black ring-opacity-5 transition shadow hover:shadow-md"
       />
     </label>
   );
