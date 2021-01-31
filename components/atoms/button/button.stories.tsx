@@ -9,9 +9,10 @@ export default {
   component: Button,
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+export const Default = () => <Button>Button text</Button>;
 
-export const Default = Template.bind({});
-Default.args = {
-  children: 'Test',
-};
+export const Purple = () => <Button color="purple">Button text</Button>;
+
+export const Borderless = () => (
+  <Button variant="borderless">Button text</Button>
+);
