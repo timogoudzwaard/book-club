@@ -1,8 +1,7 @@
-// Button.stories.tsx
-import { Meta, Story } from '@storybook/react';
+import { Meta } from '@storybook/react';
 import React from 'react';
-import Button, { ButtonProps } from './button';
-import '../../../.tailwind/tailwind.css';
+import Button from './button';
+import '/.tailwind/tailwind.css';
 
 export default {
   title: 'Atoms/Button',

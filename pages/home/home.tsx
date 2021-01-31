@@ -16,7 +16,7 @@ const Home = () => {
         <h1 className="text-3xl text-center">Home Page</h1>
 
         <div className="md:flex inline md:space-x-10 space-y-6 md:space-y-0">
-          <Card padding href="#">
+          <Card defaultPadding href="#">
             <div className="flex-shrink">
               <img className="w-full" src="/images/background.png" />
             </div>
@@ -37,7 +37,7 @@ const Home = () => {
               </div>
             </div>
           </Card>
-          <Card padding>
+          <Card defaultPadding>
             <div className="flex-shrink">
               <img className="w-full" src="/images/background.png" />
             </div>
