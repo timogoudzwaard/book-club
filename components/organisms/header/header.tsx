@@ -23,6 +23,7 @@ const Header = () => {
 
         <button
           onClick={() => {
+            window.navigator.vibrate(10);
             setMobileMenu(!mobileMenu);
           }}
           className="md:hidden bg-white rounded-md p-2 inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
