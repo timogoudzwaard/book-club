@@ -10,8 +10,8 @@ const MobileMenu = ({ isEnabled }: MobileMenuProps) => {
   const MobileMenuClasses = classNames(
     'absolute transition top-24 inset-x-2 opacity-0 transform scale-95 md:hidden',
     {
-      'opacity-100': isEnabled,
-      'scale-100': isEnabled,
+      'opacity-100 scale-100': isEnabled,
+      '-z-10': !isEnabled,
     }
   );
 
