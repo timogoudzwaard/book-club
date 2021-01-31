@@ -5,7 +5,9 @@ import classNames from 'classnames';
 
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
-  const svgOpenClasses = classNames('h-8 w-8', { hidden: mobileMenu });
+  const svgOpenClasses = classNames('h-8 w-8', {
+    hidden: mobileMenu,
+  });
   const svgCloseClasses = classNames('h-8 w-8', { hidden: !mobileMenu });
 
   return (
@@ -13,9 +15,9 @@ const Header = () => {
       <nav className="flex flex-wrap justify-between">
         <a href="/">
           <img
-            className="mb-2 h-10 w-10 mx-auto md:m-0 transition transform hover:scale-110"
+            className="h-10 w-10 mx-auto md:m-0 transition transform hover:scale-110"
             src="/svg/icon-message.svg"
-            alt="chat icon"
+            alt="book club logo"
           />
         </a>
 
@@ -23,37 +25,18 @@ const Header = () => {
           onClick={() => {
             setMobileMenu(!mobileMenu);
           }}
-          className="md:hidden bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+          className="md:hidden bg-white rounded-md p-2 inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500"
         >
-          <svg
+          <img
             className={svgOpenClasses}
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-
-          <svg
+            src="/svg/menu-open.svg"
+            alt="open menu"
+          />
+          <img
             className={svgCloseClasses}
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
-          </svg>
+            src="/svg/menu-close.svg"
+            alt="close menu"
+          />
         </button>
 
         <div className="self-center space-x-10 hidden md:block">

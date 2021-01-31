@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "storybook": "tailwind build -o .tailwind/tailwind.css && start-storybook -p 6006",
+    "storybook": "tailwind build -o .tailwind/tailwind.css && start-storybook -s ./public -p 6006",
     "build:storybook": "build-storybook"
   },
   "dependencies": {
