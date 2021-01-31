@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --hostname=0.0.0.0",
     "build": "next build",
     "start": "next start",
     "storybook": "tailwind build -o .tailwind/tailwind.css && start-storybook -s ./public -p 6006",
